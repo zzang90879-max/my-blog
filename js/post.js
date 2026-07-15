@@ -24,6 +24,7 @@
 
       container.innerHTML = `
         <header class="post-header">
+          <span class="post-header-path">~/posts/${escapeHtml(filename)}</span>
           <h1>${escapeHtml(meta.title || filename)}</h1>
           <p class="post-meta">${escapeHtml(BlogApp.formatDate(meta.date))}</p>
           ${

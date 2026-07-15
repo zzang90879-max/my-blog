@@ -37,16 +37,22 @@
         .map(
           (post) => `
         <li class="post-card">
-          <h2 class="post-card-title">
-            <a href="post.html?post=${encodeURIComponent(post.filename)}">${escapeHtml(post.title)}</a>
-          </h2>
-          <p class="post-meta">${escapeHtml(BlogApp.formatDate(post.date))}</p>
-          ${post.excerpt ? `<p class="post-excerpt">${escapeHtml(post.excerpt)}</p>` : ""}
-          ${
-            post.tags.length
-              ? `<ul class="tag-list">${post.tags.map((t) => `<li class="tag">${escapeHtml(t)}</li>`).join("")}</ul>`
-              : ""
-          }
+          <div class="post-card-titlebar">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="post-card-path">~/posts/${escapeHtml(post.filename)}</span>
+          </div>
+          <div class="post-card-body">
+            <h2 class="post-card-title">
+              <a href="post.html?post=${encodeURIComponent(post.filename)}">${escapeHtml(post.title)}</a>
+            </h2>
+            <p class="post-meta">${escapeHtml(BlogApp.formatDate(post.date))}</p>
+            ${post.excerpt ? `<p class="post-excerpt">${escapeHtml(post.excerpt)}</p>` : ""}
+            ${
+              post.tags.length
+                ? `<ul class="tag-list">${post.tags.map((t) => `<li class="tag">${escapeHtml(t)}</li>`).join("")}</ul>`
+                : ""
+            }
+          </div>
         </li>`
         )
         .join("");
