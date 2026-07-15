@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>2048</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="header">
+    <h1 class="title">2048</h1>
+    <div class="scoreboard">
+      <div class="score-box" id="score-box">
+        <span class="score-label">SCORE</span>
+        <span class="score-value" id="score-value">0</span>
+      </div>
+      <div class="score-box" id="best-box">
+        <span class="score-label">BEST</span>
+        <span class="score-value" id="best-value">0</span>
+      </div>
+    </div>
+    <button class="new-game-btn" id="new-game-btn" type="button">New Game</button>
+    <p class="hint">방향키 또는 스와이프로 타일을 움직이세요</p>
+  </header>
+
+  <main class="board-container" id="board-container">
+    <div class="grid-bg" id="grid-bg"></div>
+    <div class="tiles" id="tiles"></div>
+
+    <div class="overlay" id="win-overlay" hidden>
+      <div class="overlay-box">
+        <p class="overlay-title">You Win!</p>
+        <div class="overlay-actions">
+          <button class="overlay-btn" id="keep-playing-btn" type="button">계속하기</button>
+          <button class="overlay-btn" id="win-restart-btn" type="button">새 게임</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="overlay" id="gameover-overlay" hidden>
+      <div class="overlay-box">
+        <p class="overlay-title">Game Over</p>
+        <p class="overlay-score">최종 점수: <span id="final-score">0</span></p>
+        <div class="overlay-actions">
+          <button class="overlay-btn" id="gameover-restart-btn" type="button">새 게임</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div class="touch-controls" aria-hidden="true">
+    <div class="touch-row">
+      <button class="touch-btn" data-dir="up" type="button">▲</button>
+    </div>
+    <div class="touch-row">
+      <button class="touch-btn" data-dir="left" type="button">◀</button>
+      <button class="touch-btn" data-dir="down" type="button">▼</button>
+      <button class="touch-btn" data-dir="right" type="button">▶</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

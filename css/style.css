@@ -112,12 +112,19 @@ main {
   margin-bottom: 2.5rem;
 }
 
-.page-intro h1 {
+.page-intro h1,
+.page-intro h2 {
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
   font-size: 1.6rem;
   margin: 0 0 0.4rem;
   color: var(--neon);
   text-shadow: 0 0 8px var(--neon-glow);
+}
+
+.apps-section {
+  margin-top: 3rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--border);
 }
 
 .page-intro p {
@@ -232,6 +239,48 @@ main {
   color: var(--text-secondary);
   padding: 2rem 0;
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+/* ---------- App cards (mini web-app portfolio) ---------- */
+.app-card-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.app-card-preview-wrap {
+  position: relative;
+  background: #000;
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.app-card-preview {
+  display: block;
+  width: 100%;
+  height: 220px;
+  border: 0;
+  pointer-events: none;
+}
+
+.app-card-play-hint {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(6, 9, 7, 0);
+  color: var(--neon);
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.85rem;
+  opacity: 0;
+  transition: opacity 0.15s ease, background-color 0.15s ease;
+}
+
+.post-card:hover .app-card-play-hint {
+  opacity: 1;
+  background: rgba(6, 9, 7, 0.6);
+  text-shadow: 0 0 6px var(--neon-glow);
 }
 
 /* ---------- Post page ---------- */
